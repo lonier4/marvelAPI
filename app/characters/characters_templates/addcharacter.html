@@ -1,0 +1,36 @@
+{% extends 'components/layout.html' %}
+
+{% block title %} Add A New Marvel Character {% endblock title %}
+
+{% block content %}
+
+<div>
+    <h3>Add A New Character</h3>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <fieldset id="name-field">
+                {{ form.character_name.label }}
+                {{ form.character_name(class="form-control", placeholder="Marvel Character Name...") }}            </fieldset>
+            <fieldset id="super-power-field">
+                {{ form.super_power.label }}
+                {{ form.super_power(class='form-control', placeholder="Superpower...") }}
+            </fieldset>
+            <fieldset id="comics-appeared-in-field">
+                {{ form. comics_appeared_in.label }}
+                {{ form.comics_appeared_in(class='form-control', placeholder="What comics do they appear in?...") }}
+            </fieldset>
+            <fieldset id="hero-or-villain-field">
+                {{ form.hero_or_villain.label }}
+                {{ form.hero_or_villain(class="form-control", placeholder="Which side are they on?...") }}
+            </fieldset>
+            <fieldset id="description-field">
+                {{ form.description.label }}
+                {{ form.description(class="form-control", placeholder="Tell Me More About Them...") }}
+            </fieldset>
+            <br>
+            {{ form.submit_button(class="btn btn-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}

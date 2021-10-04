@@ -1,0 +1,35 @@
+{% extends 'components/layout.html' %}
+
+{% block title %} {{ username }} Profile {% endblock title%}
+
+{% block content %}
+<div class="justify-content-center">
+    <div class="col-6">
+      <h1>Udpate Your Info</h1>
+      <h5>Only fill out fields you intend to change</h5>
+      <form method="POST">
+          {{ form.hidden_tag() }}
+          <div class="form-group">
+              <fieldset id="newusername-field">
+                  {{ form.newusername.label }}
+                  {{ form.newusername(class="form-control", placeholder="New Username...") }}            
+              </fieldset>
+              <fieldset id="newpassword-field">
+                  {{ form.newpassword.label }}
+                  {{ form.newpassword(class='form-control', placeholder="New Password...") }}
+              </fieldset>
+              <fieldset id="confirm-newpassword-field">
+                  {{ form.confirm_newpassword.label }}
+                  {{ form.confirm_newpassword(class='form-control', placeholder="Confirm New Password...") }}
+              </fieldset>
+              <fieldset id="oldpassword-field">
+                {{ form.oldpassword.label }}
+                {{ form.oldpassword(class='form-control', placeholder="Current Password...") }}
+            </fieldset>
+              <br>
+              {{ form.submit_button(class="btn btn-info") }}
+          </div>
+      </form>
+    </div> 
+ </div>
+{% endblock content %}

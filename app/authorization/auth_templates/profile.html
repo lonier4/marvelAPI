@@ -1,0 +1,23 @@
+{% extends 'components/layout.html' %}
+
+{% block title %} {{ username }} Profile {% endblock title%}
+
+{% block content %}
+<div class="row-fluid">
+    <div class="card">
+        <div class="card-header">
+        Hello, {{ first_name }} {{ last_name }}
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Username: {{ username }}</li>
+            <li class="list-group-item">User ID: {{ id }}</li>
+            <li class="list-group-item">Email: {{ email }}</li>
+            <li class="list-group-item">Account Created: {{ date_created }}</li>
+        </ul>
+    </div>
+</div>
+<br>
+<div class="row-fluid">
+    <a type="button" href="{{ url_for('auth.updateuser') }}" class="btn btn-info">Update User Info</a>
+</div>
+{% endblock content %}
