@@ -3,5 +3,5 @@ from app import app
 
 @app.route('/')
 def home():
-    thor = "Marvel API"
+    thor = "Welcome, Marvel Fan"
     return render_template('index.html', thor=thor)

@@ -3,34 +3,56 @@
 {% block title %} Add A New Marvel Character {% endblock title %}
 
 {% block content %}
+<div class="col-4">
+    <img src="../../static/images/hulk.jpg" alt="Hulk">
+</div>
 
-<div>
-    <h3>Add A New Character</h3>
-    <form method="POST">
-        {{ form.hidden_tag() }}
-        <div class="form-group">
-            <fieldset id="name-field">
-                {{ form.character_name.label }}
-                {{ form.character_name(class="form-control", placeholder="Marvel Character Name...") }}            </fieldset>
-            <fieldset id="super-power-field">
-                {{ form.super_power.label }}
-                {{ form.super_power(class='form-control', placeholder="Superpower...") }}
-            </fieldset>
-            <fieldset id="comics-appeared-in-field">
-                {{ form. comics_appeared_in.label }}
-                {{ form.comics_appeared_in(class='form-control', placeholder="What comics do they appear in?...") }}
-            </fieldset>
-            <fieldset id="hero-or-villain-field">
-                {{ form.hero_or_villain.label }}
-                {{ form.hero_or_villain(class="form-control", placeholder="Which side are they on?...") }}
-            </fieldset>
-            <fieldset id="description-field">
-                {{ form.description.label }}
-                {{ form.description(class="form-control", placeholder="Tell Me More About Them...") }}
-            </fieldset>
-            <br>
-            {{ form.submit_button(class="btn btn-info") }}
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+    Add A New Character
+</button>
+  
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add A New Character</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        <fieldset id="name-field">
+                            {{ form.character_name.label }}
+                            {{ form.character_name(class="form-control", placeholder="Marvel Character Name...") }}
+                        </fieldset>
+                        <fieldset id="super-power-field">
+                            {{ form.super_power.label }}
+                            {{ form.super_power(class='form-control', placeholder="Superpower...") }}
+                        </fieldset>
+                        <fieldset id="comics-appeared-in-field">
+                            {{ form. comics_appeared_in.label }}
+                            {{ form.comics_appeared_in(class='form-control', placeholder="What comics do they appear
+                            in?...") }}
+                        </fieldset>
+                        <fieldset id="hero-or-villain-field">
+                            {{ form.hero_or_villain.label }}
+                            {{ form.hero_or_villain(class="form-control", placeholder="Which side are they on?...") }}
+                        </fieldset>
+                        <fieldset id="description-field">
+                            {{ form.description.label }}
+                            {{ form.description(class="form-control", placeholder="Tell Me More About Them...") }}
+                        </fieldset>
+                        <br>
+                        {{ form.submit_button(class="btn btn-dark") }}
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </form>
+    </div>
 </div>
 {% endblock content %}

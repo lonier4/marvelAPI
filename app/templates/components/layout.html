@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../static/css/main.css">
 </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="{{ url_for('home') }}">Marvel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -30,7 +30,6 @@
           </div>
         </div>
       </nav>
-
       <div class="row">
         {% with messages = get_flashed_messages(with_categories=True) %}
         {% if messages %}
